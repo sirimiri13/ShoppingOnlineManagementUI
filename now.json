@@ -14,6 +14,7 @@
    { "src": "/index", "dest": "/" },
    { "src": "/product", "dest": "/" },
    { "src": "/store", "dest": "/" },
-   { "src": "/order", "dest": "/" }
+   { "src": "/order", "dest": "/" },
+   { "src": "/user", "dest": "/" }
     ]
 }
