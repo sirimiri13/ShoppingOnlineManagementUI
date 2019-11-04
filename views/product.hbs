@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>FLORAL ADMIN</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME STYLE  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="stylesheets/font-awesome.css" rel="stylesheet" />
+    <!-- DATATABLE STYLE  -->
+    <link href="javascripts/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="stylesheets/style.css" rel="stylesheet" />
+    <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body>
+   
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row pad-botm">
+                <div class="col-md-12">
+                    <h4 class="header-line">QUẢN LÝ SẢN PHẨM</h4>
+                </div>
+                <span class="col-md-12 input-group-prepend" style="text-align: right">
+                    <span>Thêm sản phẩm</span>
+                    <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#myModal"
+                        id="btn-add-product">
+                        <i class="fa fa-plus-square"></i>
+                    </button>
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel">
+                        <div class="panel-heading header-panel">
+                            Danh sách sản phẩm
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                                <th class="style-middle-center">STT</th>
+                                            <th class="style-middle-center">Tên sản phẩm</th>
+                                            <th class="style-middle-center">Hình ảnh</th>
+                                            <th class="style-middle-center">Mô tả</th>
+                                            <th class="style-middle-center">Giá (1 đơn vị)</th>
+                                            <th class="style-middle-center">Số lượng</th>
+                                            <th class="style-middle-center">Danh mục</th>
+                                            <th class="style-middle-center">Chức năng</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                        <tr>
+                                                <td class="style-middle-center">1</td>
+                                            <td class="style-middle-center" id="product-name">iPhone 11 ProMax</td>
+                                            <td class="style-middle-center">
+                                                <img src="image/ip11.png" class="img-product" id="product-image">
+                                            </td>
+                                            <td class="style-middle-center" id="product-info">128GB</td>
+                                            <td class="style-middle-center" id="product-price">40.000.000
+                                            </td>
+                                            <td class="style-middle-center" id="product-quantity">13
+                                            </td>
+                                            <td class="style-middle-center" id="product-category">
+                                                Smart Phone</td>
+                                            <td class="style-middle-center">
+                                                <button class="btn btn-outline-primary btn-edit-product" type="button"
+                                                    data-toggle="modal" data-target="#myModal"
+                                                    data-id="<%=product._id%>">
+                                                    <i class="fa fa-edit"></i></button>
+                                                <a class="btn btn-outline-primary btn-delete-product" type="button"
+                                                    href="/product">
+                                                    <i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="style-middle-center">2</td>
+                                            <td class="style-middle-center" id="product-name">iPhone XS Max</td>
+                                            <td class="style-middle-center">
+                                                <img src="image/xs.jpg" class="img-product" id="product-image">
+                                            </td>
+                                            <td class="style-middle-center" id="product-info">256GB</td>
+                                            <td class="style-middle-center" id="product-price">38.500.000
+                                            </td>
+                                            <td class="style-middle-center" id="product-quantity">9
+                                            </td>
+                                            <td class="style-middle-center" id="product-category">
+                                                Smart Phone</td>
+                                            <td class="style-middle-center">
+                                                <button class="btn btn-outline-primary btn-edit-product" type="button"
+                                                    data-toggle="modal" data-target="#myModal"
+                                                    data-id="<%=product._id%>">
+                                                    <i class="fa fa-edit"></i></button>
+                                                <a class="btn btn-outline-primary btn-delete-product" type="button"
+                                                    href="/product">
+                                                    <i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="style-middle-center">3</td>
+                                            <td class="style-middle-center" id="product-name">Macbook Pro 2019</td>
+                                            <td class="style-middle-center">
+                                                <img src="image/mac2.png" class="img-product" id="product-image">
+                                            </td>
+                                            <td class="style-middle-center" id="product-info">512GB</td>
+                                            <td class="style-middle-center" id="product-price">46.000.000
+                                            </td>
+                                            <td class="style-middle-center" id="product-quantity">5
+                                            </td>
+                                            <td class="style-middle-center" id="product-category">
+                                                Laptop</td>
+                                            <td class="style-middle-center">
+                                                <button class="btn btn-outline-primary btn-edit-product" type="button"
+                                                    data-toggle="modal" data-target="#myModal"
+                                                    data-id="<%=product._id%>">
+                                                    <i class="fa fa-edit"></i></button>
+                                                <a class="btn btn-outline-primary btn-delete-product" type="button"
+                                                    href="/product">
+                                                    <i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="style-middle-center">4</td>
+                                            <td class="style-middle-center" id="product-name">Macbook Air</td>
+                                            <td class="style-middle-center">
+                                                <img src="image/mac.jpg" class="img-product" id="product-image">
+                                            </td>
+                                            <td class="style-middle-center" id="product-info">256GB</td>
+                                            <td class="style-middle-center" id="product-price">42.400.000
+                                            </td>
+                                            <td class="style-middle-center" id="product-quantity">12
+                                            </td>
+                                            <td class="style-middle-center" id="product-category">
+                                                Laptop</td>
+                                            <td class="style-middle-center">
+                                                <button class="btn btn-outline-primary btn-edit-product" type="button"
+                                                    data-toggle="modal" data-target="#myModal"
+                                                    data-id="<%=product._id%>">
+                                                    <i class="fa fa-edit"></i></button>
+                                                <a class="btn btn-outline-primary btn-delete-product" type="button"
+                                                    href="/product">
+                                                    <i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="style-middle-center">5</td>
+                                            <td class="style-middle-center" id="product-name">Airpods Pro</td>
+                                            <td class="style-middle-center">
+                                                <img src="image/tải xuống.jpg" class="img-product" id="product-image">
+                                            </td>
+                                            <td class="style-middle-center" id="product-info"></td>
+                                            <td class="style-middle-center" id="product-price">6.800.000
+                                            </td>
+                                            <td class="style-middle-center" id="product-quantity">13
+                                            </td>
+                                            <td class="style-middle-center" id="product-category">
+                                                Phụ kiện</td>
+                                            <td class="style-middle-center">
+                                                <button class="btn btn-outline-primary btn-edit-product" type="button"
+                                                    data-toggle="modal" data-target="#myModal"
+                                                    data-id="<%=product._id%>">
+                                                    <i class="fa fa-edit"></i></button>
+                                                <a class="btn btn-outline-primary btn-delete-product" type="button"
+                                                    href="/product">
+                                                    <i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="style-middle-center">6</td>
+                                            <td class="style-middle-center" id="product-name">Airpods 2</td>
+                                            <td class="style-middle-center">
+                                                <img src="image/ap.jpg" class="img-product" id="product-image">
+                                            </td>
+                                            <td class="style-middle-center" id="product-info"></td>
+                                            <td class="style-middle-center" id="product-price">5.600.000
+                                            </td>
+                                            <td class="style-middle-center" id="product-quantity">8
+                                            </td>
+                                            <td class="style-middle-center" id="product-category">
+                                                Phụ kiện</td>
+                                            <td class="style-middle-center">
+                                                <button class="btn btn-outline-primary btn-edit-product" type="button"
+                                                    data-toggle="modal" data-target="#myModal"
+                                                    data-id="<%=product._id%>">
+                                                    <i class="fa fa-edit"></i></button>
+                                                <a class="btn btn-outline-primary btn-delete-product" type="button"
+                                                    href="/product">
+                                                    <i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTENT-WRAPPER SECTION END-->
+  
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+        style="display: none;">
+        <div class="modal-dialog">
+            <form method="POST" id="my-form" enctype="multipart/form-data">
+                <div class="modal-content">
+                    <div class="modal-header header-panel">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel" style="font-weight: bold">Thông tin sản phẩm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12 col-log-12">
+                            <div class="form-group row">
+                                <label class="col-lg-2 col-md-2 col-form-label">Tên</label>
+                                <div class="col-lg-10 col-md-10">
+                                    <input class="form-control ng-untouched ng-pristine ng-valid" type="text"
+                                        name='name' id="txt-product-name" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-2 col-md-2 col-form-label" for="category-list">Danh mục</label>
+                                <div class="col-lg-10 col-md-10">
+                                    <select class="form-control ng-pristine ng-valid ng-touched" id="category-list"
+                                        name="category">
+                                        
+                                        <option value="<%=category.code%>">Smartphone</option>
+                                        <option value="<%=category.code%>">Laptop </option>
+                                        <option>Phụ kiện</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-2 col-md-2 col-form-label">Giá tiền</label>
+                                <div class="col-lg-10 col-md-10">
+                                    <input class="form-control ng-pristine ng-valid ng-touched" type="number"
+                                        name='price' id="txt-product-price" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-2 col-md-2 col-form-label">Số lượng</label>
+                                <div class="col-lg-10 col-md-10">
+                                    <input class="form-control ng-pristine ng-valid ng-touched" type="number"
+                                        name='quantity' id="txt-product-quantity" required>
+                                </div>
+                            </div>
+                            <label class="col-form-label">Hình ảnh</label>
+                            <div class="form-group">
+                                <section class="thumbnail-container">
+                                    <div class="thumbnail-container--content image-box" for="image-upload">
+                                        <input accept="image/jpeg, image/gif, image/png" id="image-upload" multiple=""
+                                            style="display: none;" type="file" name="image" onchange="loadFile(event)" required>
+                                        <label class="style-pointer" for="image-upload"
+                                            style="max-height: 100%; max-width: 100%">
+                                            <img class="img-dialog" src="images/imageHolder.png" id="txt-product-image">
+                                        </label>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="form-group">
+                                <label>Mô tả</label>
+                                <textarea class="form-control" rows="3" name='info' required
+                                    id="txt-product-info"></textarea>
+                                <input type="text" name='id' id="txt-product-id"
+                                    style="height: 0px; width: 0px; visibility: hidden;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                        <a href="" target="_parent">
+                            <button type="submit" class="btn btn-primary" data-dismiss="modal">Lưu thay đổi</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="javascripts/jquery-1.10.2.js"></script>
+    <script>
+        $("#btn-add-product").click(function () {
+            $("#my-form").attr('action', '/product/add');
+            $('#txt-product-name').attr('placeholder', '');
+            $('#txt-product-image').attr('src', 'images/imageHolder.png');
+            $('#txt-product-info').attr('placeholder', '');
+            $('#txt-product-price').attr('placeholder', '');
+            $('#txt-product-quantity').attr('placeholder', '');
+            $("#category-list option").attr('selected', false);
+        })
+        $(".btn-edit-product").click(function () {
+            var id = $(this).data('id');
+            $("#my-form").attr('action', '/product/edit?id=' + id);
+            var name = $(this).parent().parent().find('#product-name').text();
+            var image = $(this).parent().parent().find('#product-image').attr('src');
+            var info = $(this).parent().parent().find('#product-info').text();
+            var price = $(this).parent().parent().find('#product-price').text();
+            var quantity = $(this).parent().parent().find('#product-quantity').text();
+            var category = $(this).parent().parent().find('#product-category').text().trim();
+            $('#txt-product-name').attr('placeholder', name);
+            $('#txt-product-image').attr('src', image);
+            $('#txt-product-info').attr('placeholder', info);
+            $('#txt-product-price').attr('placeholder', price);
+            $('#txt-product-quantity').attr('placeholder', quantity);
+            $("#category-list option").filter(function () {
+                return $(this).text() == category;
+            }).attr('selected', true);
+            $('#txt-product-id').attr('value', id);
+        })
+        var loadFile = function (event) {
+            var image = document.getElementById('txt-product-image');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+    </script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="javascripts/bootstrap.js"></script>
+    <!-- DATATABLE SCRIPTS  -->
+    <script src="javascripts/dataTables/jquery.dataTables.js"></script>
+    <script src="javascripts/dataTables/dataTables.bootstrap.js"></script>
+    <!-- CUSTOM SCRIPTS  -->
+    <script src="javascripts/custom.js"></script>
+</body>
+
+</html>
