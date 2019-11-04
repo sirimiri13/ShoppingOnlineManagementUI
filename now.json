@@ -4,7 +4,6 @@
 	{ "src": "package.json", "use": "@now/static-build"},
 	{ "src": "./index.js", "use": "@now/node-server" },
 	{ "src": "./routes/index.js", "use": "@now/node-server" },
-	{ "src": "./routes/login.js", "use": "@now/node-server" },
 	{ "src": "./app.js", "use": "@now/node-server" },
    { "src": "./routes/*.js", "use": "@now/node-server" }
     ],
@@ -15,6 +14,6 @@
    { "src": "/index", "dest": "/" },
    { "src": "/product", "dest": "/" },
    { "src": "/store", "dest": "/" },
-   { "src": "/user", "dest": "/" },
+   { "src": "/user", "dest": "/" }
     ]
 }
