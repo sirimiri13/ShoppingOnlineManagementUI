@@ -9,7 +9,7 @@ var router = express.Router();
     res.render('index', { title: 'index' });
   });
   router.get('/home', function(req, res, next) {
-    res.render('index', { title: 'index' });
+    res.render('index', { title: 'Thống kê' });
   });
   router.get('/login', function(req, res, next) {
     res.render('login', { title: 'login' });
